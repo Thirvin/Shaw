@@ -11,15 +11,25 @@ public class Player : Character
 
     void Update()
     {
-        //for test, W -> build, S -> leave
+        //for NPC data test, W -> build, S -> leave
         if (Input.GetKeyDown (KeyCode.W))
         {
-            this.GetComponent<NPCManager>().build();
+            this.GetComponent<NPCManager>().Build();
         }
         if (Input.GetKeyDown (KeyCode.S))
         {
-            this.GetComponent<NPCManager>().leave();
+            this.GetComponent<NPCManager>().Leave();
         }
 
+
+        //for NPC time test
+        if (Input.GetKeyDown(KeyCode.LeftBracket))
+        {
+            GetComponent<NPCManager>().WorkTime();
+        }
+        if (Input.GetKeyDown(KeyCode.RightBracket))
+        {
+            GetComponent<NPCManager>().RestTime();
+        }
     }
 }

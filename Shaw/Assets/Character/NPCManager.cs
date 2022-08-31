@@ -5,10 +5,19 @@ using System.IO;
 using System;
 public class NPCManager : MonoBehaviour
 {
+    public GameObject characterPrefab;
 
     public List<GameObject> npcs = new List<GameObject>();
 
-    public void build()
+    public List<Transform> workPlaces = new List<Transform>();
+    public List<Transform> restPlaces = new List<Transform>();
+
+    private void Start()
+    {
+        TimeManager.Instance.npcManager = this;
+    }
+
+    public void Build()
     {
         // summon the npc
         StreamReader sr = new StreamReader("Assets/Character/data.txt");
@@ -21,8 +30,8 @@ public class NPCManager : MonoBehaviour
             int[] data = new int [7] ;
             string[] subs = line.Split('-');
 
-            GameObject temp = new GameObject();
-            NPC npc = temp.AddComponent<NPC>();
+            GameObject npcTemp = Instantiate(characterPrefab);            
+            NPC npc = npcTemp.AddComponent<NPC>();            
 
             for(int i = 0;i < 7;i ++)
             {
@@ -40,8 +49,9 @@ public class NPCManager : MonoBehaviour
             npc.Personality = data[6];
             npc.Number = npcs.Count;
             npc.Name = subs[7];
+            npcTemp.name = subs[7];
             //skin
-            npcs.Add(temp);
+            npcs.Add(npcTemp);
 
             line = sr.ReadLine();
         }
@@ -50,23 +60,23 @@ public class NPCManager : MonoBehaviour
         Debug.Log("Complete building.");
     }
 
-    public void leave()
+    public void Leave()
     {
         StreamWriter sw = new StreamWriter("Assets/Character/data.txt");
         for(int i = 0;i < npcs.Count;i ++)
         {
             NPC npc = npcs[i].GetComponent<NPC>();
 
-            string temp = "";
-            temp += (npc.Hp.ToString() + "-" );
-            temp += (npc.Mana.ToString() + "-" );
-            temp += (npc.Speed.ToString() + "-" );
-            temp += (npc.Money.ToString() + "-" );
-            temp += (npc.Favorbility.ToString() + "-" );
-            temp += (npc.Career.ToString() + "-" );
-            temp += (npc.Personality.ToString()+"-");
-            temp += (npc.Name);
-            sw.WriteLine(temp);
+            string npcTemp = "";
+            npcTemp += (npc.Hp.ToString() + "-" );
+            npcTemp += (npc.Mana.ToString() + "-" );
+            npcTemp += (npc.Speed.ToString() + "-" );
+            npcTemp += (npc.Money.ToString() + "-" );
+            npcTemp += (npc.Favorbility.ToString() + "-" );
+            npcTemp += (npc.Career.ToString() + "-" );
+            npcTemp += (npc.Personality.ToString()+"-");
+            npcTemp += (npc.Name);
+            sw.WriteLine(npcTemp);
             Destroy(npcs[i]);
         }
         npcs.Clear();
@@ -74,6 +84,22 @@ public class NPCManager : MonoBehaviour
         sw.Close();
 
         Debug.Log("Complete leaving.");
+    }
+
+
+
+
+    //test functions
+    public void WorkTime()
+    {
+        npcs[0].GetComponent<NPC>().MoveToDestination(workPlaces[0].position);
+        npcs[1].GetComponent<NPC>().MoveToDestination(workPlaces[1].position);
+    }
+
+    public void RestTime()
+    {
+        npcs[0].GetComponent<NPC>().MoveToDestination(restPlaces[0].position);
+        npcs[1].GetComponent<NPC>().MoveToDestination(restPlaces[1].position);
     }
 
 }

@@ -60,6 +60,7 @@
     <Compile Include="Assets\Character\Character.cs" />
     <Compile Include="Assets\Character\NPC.cs" />
     <Compile Include="Assets\Character\NPCManager.cs" />
+    <Compile Include="Assets\System\TimeManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Character\data.txt" />
