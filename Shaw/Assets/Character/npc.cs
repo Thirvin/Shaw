@@ -8,7 +8,13 @@ public class npc : Character
      public int Favorbility = 0;
      public int Career = 0;
      public int Personality = 0;
-     private void Update() {
-
+     void trade(GameObject player)
+     {
+          //do things here
      }
+     void tallk(GameObject player)
+     {
+          //do things here
+     }
+
 }

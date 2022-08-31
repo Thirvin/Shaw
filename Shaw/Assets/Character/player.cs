@@ -11,7 +11,7 @@ public class player : Character
 
     void Update()
     {
-
+        //for test W -> build, S -> leave
         if (Input.GetKeyDown (KeyCode.W))
         {
             this.GetComponent<Manager>().build();
@@ -20,5 +20,6 @@ public class player : Character
         {
             this.GetComponent<Manager>().leave();
         }
+
     }
 }
