@@ -37,9 +37,9 @@ public class NPCManager : MonoBehaviour
             npc.Money = data[3];
             npc.Favorbility = data[4];
             npc.Career = data[5];
-            npc.Personality = data[6];            
+            npc.Personality = data[6];
             npc.Number = npcs.Count;
-
+            npc.Name = subs[7];
             //skin
             npcs.Add(temp);
 
@@ -64,8 +64,8 @@ public class NPCManager : MonoBehaviour
             temp += (npc.Money.ToString() + "-" );
             temp += (npc.Favorbility.ToString() + "-" );
             temp += (npc.Career.ToString() + "-" );
-            temp += (npc.Personality.ToString());
-
+            temp += (npc.Personality.ToString()+"-");
+            temp += (npc.Name);
             sw.WriteLine(temp);
             Destroy(npcs[i]);
         }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NPC : Character
 {
+     public string Name = "";
      public int Number = -1;
      public int Favorbility = 0;
      public int Career = 0;

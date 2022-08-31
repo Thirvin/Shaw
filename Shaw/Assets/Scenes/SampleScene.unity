@@ -408,9 +408,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1095107160}
-  - component: {fileID: 1095107159}
-  - component: {fileID: 1095107158}
   - component: {fileID: 1095107157}
+  - component: {fileID: 1095107162}
+  - component: {fileID: 1095107161}
   m_Layer: 0
   m_Name: NPCFunctionTester
   m_TagString: Untagged
@@ -431,49 +431,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcs: []
---- !u!114 &1095107158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095107156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 671432cffc1aa884b82026cffe3c4750, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hp: 0
-  Mana: 0
-  Speed: 0
-  Money: 0
-  prefab: []
-  Number: -1
-  Favorbility: 0
-  Career: 0
-  Personality: 0
---- !u!114 &1095107159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095107156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3509e0a025faf164f99e73401f63dc9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hp: 0
-  Mana: 0
-  Speed: 0
-  Money: 0
-  prefab:
-  - {fileID: 0}
-  talent: 0
-  ex_career: 0
-  ex_habit: 0
-  npcs: []
 --- !u!4 &1095107160
 Transform:
   m_ObjectHideFlags: 0
@@ -489,6 +446,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1095107161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095107156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3509e0a025faf164f99e73401f63dc9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 0
+  Mana: 0
+  Speed: 0
+  Money: 0
+  prefab: []
+  talent: 0
+  ex_career: 0
+  ex_habit: 0
+  npcs: []
+--- !u!114 &1095107162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095107156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b850a83b037112943a74691f86996303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 0
+  Mana: 0
+  Speed: 0
+  Money: 0
+  prefab: []
 --- !u!1 &1813397070
 GameObject:
   m_ObjectHideFlags: 0
