@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class npc : Character
+public class NPC : Character
 {
      public int Number = -1;
      public int Favorbility = 0;
@@ -12,7 +12,7 @@ public class npc : Character
      {
           //do things here
      }
-     void tallk(GameObject player)
+     void talk(GameObject player)
      {
           //do things here
      }
