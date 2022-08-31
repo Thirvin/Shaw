@@ -14,6 +14,7 @@ public class Manager : MonoBehaviour
         StreamReader sr = new StreamReader("Assets/Character/data.txt");
         string line;
         line = sr.ReadLine();
+
         while(line != "@")
         {
             //read data -> summon npc
@@ -34,6 +35,7 @@ public class Manager : MonoBehaviour
             temp.GetComponent<npc>().Favorbility = data[4];
             temp.GetComponent<npc>().Career = data[5];
             temp.GetComponent<npc>().Personality = data[6];
+            temp.GetComponent<npc>().Number = npcs.Count;
             //skin
 
 

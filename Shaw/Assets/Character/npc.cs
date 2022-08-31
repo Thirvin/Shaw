@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class npc : Character
 {
-
+     public int Number = -1;
      public int Favorbility = 0;
      public int Career = 0;
      public int Personality = 0;
