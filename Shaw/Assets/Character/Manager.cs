@@ -34,10 +34,15 @@ public class Manager : MonoBehaviour
             temp.GetComponent<npc>().Favorbility = data[4];
             temp.GetComponent<npc>().Career = data[5];
             temp.GetComponent<npc>().Personality = data[6];
+            //skin
+
+
+
             npcs.Add(temp);
 
             line = sr.ReadLine();
         }
+        sr.Close();
     }
 
     public void leave()
