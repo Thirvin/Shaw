@@ -9,27 +9,22 @@ public class Player : Character
     public int talent = 0, ex_career = 0, ex_habit = 0;
     public List<GameObject> npcs = new List<GameObject>();
 
+    private void Awake()
+    {
+        GetComponent<NPCManager>().Build();
+        Debug.Log("Test");
+    }
+
     void Update()
     {
         //for NPC data test, W -> build, S -> leave
         if (Input.GetKeyDown (KeyCode.W))
         {
-            this.GetComponent<NPCManager>().Build();
+            GetComponent<NPCManager>().Build();
         }
         if (Input.GetKeyDown (KeyCode.S))
         {
-            this.GetComponent<NPCManager>().Leave();
-        }
-
-
-        //for NPC time test
-        if (Input.GetKeyDown(KeyCode.LeftBracket))
-        {
-            GetComponent<NPCManager>().WorkTime();
-        }
-        if (Input.GetKeyDown(KeyCode.RightBracket))
-        {
-            GetComponent<NPCManager>().RestTime();
+            GetComponent<NPCManager>().Leave();
         }
     }
 }

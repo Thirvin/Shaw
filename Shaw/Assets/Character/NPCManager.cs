@@ -16,18 +16,61 @@ public class NPCManager : MonoBehaviour
     {
         TimeManager.Instance.npcManager = this;
     }
-    public void timeCheck()
+    public void TimeCheck()
     {
-        foreach (GameObject npc in npcs)
+        foreach (GameObject npcObject in npcs)
         {
-            if(TimeManager.Instance.currentHour == npc.GetComponent<NPC>().WorkTime_Hour && TimeManager.Instance.currentMin == npc.GetComponent<NPC>().WorkTime_Min)
+            NPC npc = npcObject.GetComponent<NPC>();
+
+            //Rest first
+            if (npc.WorkTime_Hour >= npc.RestTime_Hour && npc.WorkTime_Min > npc.RestTime_Min)
             {
-                npc.GetComponent<NPC>().MoveToDestination(workPlaces[npc.GetComponent<NPC>().Work_Place].position);
+                //Check if is in RestRime
+                if((TimeManager.Instance.currentHour >= npc.RestTime_Hour && TimeManager.Instance.currentMin >= npc.RestTime_Min) 
+                    && (TimeManager.Instance.currentHour <= npc.WorkTime_Hour && TimeManager.Instance.currentMin < npc.WorkTime_Min))
+                {
+                    if (npc.working) npc.working = false;
+                    npc.MoveToDestination(restPlaces[npc.Rest_Place].position);
+                    return;
+                }
+                else
+                {
+                    if (!npc.working) npc.working = true;
+                    npc.MoveToDestination(workPlaces[npc.Work_Place].position);
+                    return;
+                }
             }
-            else if(TimeManager.Instance.currentHour == npc.GetComponent<NPC>().RestTime_Hour && TimeManager.Instance.currentMin == npc.GetComponent<NPC>().RestTime_Min)
+
+            //Work first
+            if (npc.RestTime_Hour >= npc.WorkTime_Hour && npc.RestTime_Min > npc.WorkTime_Min)
             {
-                npc.GetComponent<NPC>().MoveToDestination(restPlaces[npc.GetComponent<NPC>().Rest_Place].position);
+                //Check if is in WorkRime
+                if ((TimeManager.Instance.currentHour >= npc.WorkTime_Hour && TimeManager.Instance.currentMin >= npc.WorkTime_Min)
+                    && (TimeManager.Instance.currentHour <= npc.RestTime_Hour && TimeManager.Instance.currentMin < npc.RestTime_Min))
+                {
+                    if (!npc.working) npc.working = true;
+                    npc.MoveToDestination(workPlaces[npc.Work_Place].position);
+                    return;
+                }
+                else
+                {
+                    if (npc.working) npc.working = false;
+                    npc.MoveToDestination(restPlaces[npc.Rest_Place].position);
+                    return;
+                }
             }
+
+
+            /*
+            if (TimeManager.Instance.currentHour == npcObject.GetComponent<NPC>().WorkTime_Hour && TimeManager.Instance.currentMin == npcObject.GetComponent<NPC>().WorkTime_Min)
+            {
+                npcObject.GetComponent<NPC>().MoveToDestination(workPlaces[npcObject.GetComponent<NPC>().Work_Place].position);
+            }
+            else if(TimeManager.Instance.currentHour == npcObject.GetComponent<NPC>().RestTime_Hour && TimeManager.Instance.currentMin == npcObject.GetComponent<NPC>().RestTime_Min)
+            {
+                npcObject.GetComponent<NPC>().MoveToDestination(restPlaces[npcObject.GetComponent<NPC>().Rest_Place].position);
+            }
+            */
         }
     }
     public void Build()
@@ -110,22 +153,6 @@ public class NPCManager : MonoBehaviour
         sw.Close();
 
         Debug.Log("Complete leaving.");
-    }
-
-
-
-
-    //test functions
-    public void WorkTime()
-    {
-        npcs[0].GetComponent<NPC>().MoveToDestination(workPlaces[0].position);
-        npcs[1].GetComponent<NPC>().MoveToDestination(workPlaces[1].position);
-    }
-
-    public void RestTime()
-    {
-        npcs[0].GetComponent<NPC>().MoveToDestination(restPlaces[0].position);
-        npcs[1].GetComponent<NPC>().MoveToDestination(restPlaces[1].position);
     }
 
 }

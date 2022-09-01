@@ -13,6 +13,8 @@ public class NPC : Character
     public int WorkTime_Hour = 0,WorkTime_Min = 0;
     public int RestTime_Hour = 0,RestTime_Min = 0;
     public int Work_Place = 0,Rest_Place = 0;
+
+    public bool working;
     NavMeshAgent agent;
 
     private void Start()
