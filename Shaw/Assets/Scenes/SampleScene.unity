@@ -854,6 +854,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f24b4fa21ab7729408a507fda11d1b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHour: 0
+  currentMin: 0
   npcManager: {fileID: 0}
 --- !u!1 &1928104466
 GameObject:

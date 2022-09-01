@@ -10,7 +10,9 @@ public class NPC : Character
     public int Favorbility = 0;
     public int Career = 0;
     public int Personality = 0;
-
+    public int WorkTime_Hour = 0,WorkTime_Min = 0;
+    public int RestTime_Hour = 0,RestTime_Min = 0;
+    public int Work_Place = 0,Rest_Place = 0;
     NavMeshAgent agent;
 
     private void Start()
