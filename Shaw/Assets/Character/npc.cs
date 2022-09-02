@@ -15,7 +15,7 @@ public class NPC : Character
     public int Work_Place = 0,Rest_Place = 0;
     NavMeshAgent agent;
 
-    private void Start()
+    private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
     }
@@ -24,13 +24,13 @@ public class NPC : Character
         agent.SetDestination(pos);
         Debug.Log("Moving NPC: " + Name);
     }
-    void Trade(GameObject player)
+    public void Trade(Player player)
     {
           //do things here
     }
-    void Talk(GameObject player)
+    public void Talk(Player player)
     {
-
+        Debug.Log("Talk");
         //do things here
     }
 
