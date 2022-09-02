@@ -56,42 +56,39 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DialogueEditor\Assets\Scripts\ConversationNode.cs" />
+    <Compile Include="Assets\DialogueScripts\MonobehaviourExtensions.cs" />
+    <Compile Include="Assets\DialogueEditor\Assets\Scripts\Conversation.cs" />
+    <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableConversation.cs" />
+    <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableSetParamAction.cs" />
+    <Compile Include="Assets\Resources\DialogueTexts\DialogueTextsManager.cs" />
+    <Compile Include="Assets\DialogueEditor\Assets\Scripts\UI\ConversationManager.cs" />
+    <Compile Include="Assets\DialogueEditor\Assets\Scripts\UI\UIConversationButton.cs" />
+    <Compile Include="Assets\DialogueScripts\DialogueUtility.cs" />
+    <Compile Include="Assets\DialogueEditor\Assets\Scripts\NPCConversation.cs" />
+    <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableCondition.cs" />
+    <Compile Include="Assets\DialogueEditor\Assets\Scripts\Condition.cs" />
     <Compile Include="Assets\Character\Player.cs" />
     <Compile Include="Assets\Character\Character.cs" />
-    <Compile Include="Assets\Character\NPC.cs" />
-    <Compile Include="Assets\Character\NPCManager.cs" />
-<<<<<<< Updated upstream
-    <Compile Include="Assets\System\TimeManager.cs" />
-=======
-    <Compile Include="Assets\DialogueEditor\Assets\Scripts\UI\UIConversationButton.cs" />
-    <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableCondition.cs" />
-    <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableSetParamAction.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\Parameter.cs" />
-    <Compile Include="Assets\DialogueEditor\Assets\Scripts\Connection.cs" />
-    <Compile Include="Assets\DialogueScripts\DialogueUtility.cs" />
-    <Compile Include="Assets\DialogueEditor\Assets\Scripts\Conversation.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableNode.cs" />
-    <Compile Include="Assets\DialogueScripts\MonobehaviourExtensions.cs" />
-    <Compile Include="Assets\DialogueEditor\Assets\Scripts\ConversationNode.cs" />
-    <Compile Include="Assets\DialogueScripts\DialogueTyperManager.cs" />
-    <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableConversation.cs" />
-    <Compile Include="Assets\DialogueEditor\Assets\Scripts\NPCConversation.cs" />
-    <Compile Include="Assets\DialogueEditor\Assets\Scripts\Condition.cs" />
-    <Compile Include="Assets\DialogueEditor\Example\ExampleInputManager.cs" />
-    <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableParameter.cs" />
     <Compile Include="Assets\DialogueScripts\DialogueVertexAnimator.cs" />
-    <Compile Include="Assets\DialogueEditor\Assets\Scripts\SetParamAction.cs" />
-    <Compile Include="Assets\DialogueScripts\AudioSourceGroup.cs" />
-    <Compile Include="Assets\DialogueEditor\Assets\Scripts\UI\ConversationManager.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableConnection.cs" />
+    <Compile Include="Assets\DialogueEditor\Assets\Scripts\SetParamAction.cs" />
+    <Compile Include="Assets\DialogueScripts\DialogueTyperManager.cs" />
+    <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableParameter.cs" />
+    <Compile Include="Assets\System\TimeManager.cs" />
+    <Compile Include="Assets\DialogueEditor\Assets\Scripts\Connection.cs" />
+    <Compile Include="Assets\Character\NPC.cs" />
+    <Compile Include="Assets\DialogueEditor\Example\ExampleInputManager.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\NodeEventHolder.cs" />
-    <Compile Include="Assets\Resources\DialogueTexts\DialogueTextsManager.cs" />
->>>>>>> Stashed changes
+    <Compile Include="Assets\DialogueScripts\AudioSourceGroup.cs" />
+    <Compile Include="Assets\Character\NPCManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Character\data.txt" />
-<<<<<<< Updated upstream
-=======
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
@@ -112,7 +109,6 @@
     <None Include="Assets\Font\Noto_Sans_TC\OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
->>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -793,8 +789,14 @@
     <Reference Include="Unity.EditorCoroutines.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Services.Core.Analytics">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
@@ -810,12 +812,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

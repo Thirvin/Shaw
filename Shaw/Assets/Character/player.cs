@@ -9,9 +9,7 @@ public class Player : Character
 {
     public int talent = 0, ex_career = 0, ex_habit = 0;
 
-<<<<<<< Updated upstream
-    void Update()
-=======
+    
     NavMeshAgent agent;
 
     [SerializeField] private LayerMask groundMask;
@@ -34,17 +32,13 @@ public class Player : Character
 
 
     void CastInteractionRay()
->>>>>>> Stashed changes
     {
         RaycastHit hitInfo = new RaycastHit();
         bool hit = Physics.Raycast(transform.position, transform.forward, out hitInfo, 2f, npcLayer);
         if (hit)
         {
-<<<<<<< Updated upstream
-            this.GetComponent<NPCManager>().Build();
-=======
+            Debug.Log("ASDASD");
             hitInfo.transform.GetComponent<NPC>().Talk(this);
->>>>>>> Stashed changes
         }
     }
 
@@ -54,20 +48,6 @@ public class Player : Character
         var (success, position) = GetMousePosition();
         if (success)
         {
-<<<<<<< Updated upstream
-            this.GetComponent<NPCManager>().Leave();
-        }
-
-
-        //for NPC time test
-        if (Input.GetKeyDown(KeyCode.LeftBracket))
-        {
-            GetComponent<NPCManager>().WorkTime();
-        }
-        if (Input.GetKeyDown(KeyCode.RightBracket))
-        {
-            GetComponent<NPCManager>().RestTime();
-=======
             // Calculate the direction
             var direction = position - transform.position;
 
@@ -77,9 +57,9 @@ public class Player : Character
 
             // Make the transform look in the direction.
             transform.forward = direction;
->>>>>>> Stashed changes
         }
     }
+
     private (bool success, Vector3 position) GetMousePosition()
     {
         var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
