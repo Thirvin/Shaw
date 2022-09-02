@@ -25,9 +25,30 @@ public class TimeManager : MonoBehaviour
     }
     private void Start()
     {
+        npcManager.TimeCheck();
         StartCoroutine(TimeCounter());
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.RightBracket))
+        {
+            StopAllCoroutines();
 
+            currentMin += 10;
+            if (currentMin % 60 == 0)
+            {
+                currentHour += 1;
+                if (currentHour % 24 == 0)
+                    currentHour = 0;
+                currentMin = 0;
+            }
+
+            npcManager.TimeCheck();
+            Debug.Log(currentHour.ToString() + ":" + currentMin.ToString());
+
+            StartCoroutine(TimeCounter());
+        }
+    }
     IEnumerator TimeCounter()
     {
         yield return new WaitForSeconds(30f);
@@ -41,7 +62,8 @@ public class TimeManager : MonoBehaviour
                 currentHour = 0;
             currentMin = 0;
         }
-        npcManager.timeCheck();
+
+        npcManager.TimeCheck();
         Debug.Log(currentHour.ToString()+":"+currentMin.ToString());
 
         //Count again

@@ -35,20 +35,16 @@ public class NPCManager : MonoBehaviour
             GetComponent<NPCManager>().Leave();
         }
     }
-<<<<<<< Updated upstream
-    public void timeCheck()
-=======
 
     public void TimeCheck()
->>>>>>> Stashed changes
     {
-        foreach (GameObject npc in npcs)
+        foreach (GameObject npcObject in npcs)
         {
-            if(TimeManager.Instance.currentHour == npc.GetComponent<NPC>().WorkTime_Hour && TimeManager.Instance.currentMin == npc.GetComponent<NPC>().WorkTime_Min)
+            NPC npc = npcObject.GetComponent<NPC>();
+
+            //Rest first
+            if (npc.WorkTime_Hour > npc.RestTime_Hour || (npc.WorkTime_Hour == npc.RestTime_Hour && npc.WorkTime_Min >= npc.RestTime_Min))
             {
-<<<<<<< Updated upstream
-                npc.GetComponent<NPC>().MoveToDestination(workPlaces[npc.GetComponent<NPC>().Work_Place].position);
-=======
                 //Check if is in RestRime
                 if((TimeManager.Instance.currentHour >= npc.RestTime_Hour && TimeManager.Instance.currentMin >= npc.RestTime_Min) 
                     && (TimeManager.Instance.currentHour <= npc.WorkTime_Hour && TimeManager.Instance.currentMin < npc.WorkTime_Min))
@@ -63,14 +59,11 @@ public class NPCManager : MonoBehaviour
                     npc.MoveToDestination(workPlaces[npc.Work_Place].position);
                     continue;
                 }
->>>>>>> Stashed changes
             }
-            else if(TimeManager.Instance.currentHour == npc.GetComponent<NPC>().RestTime_Hour && TimeManager.Instance.currentMin == npc.GetComponent<NPC>().RestTime_Min)
+            
+            //Work first
+            if(npc.WorkTime_Hour < npc.RestTime_Hour || (npc.WorkTime_Hour == npc.RestTime_Hour && npc.WorkTime_Min <= npc.RestTime_Min))
             {
-<<<<<<< Updated upstream
-                npc.GetComponent<NPC>().MoveToDestination(restPlaces[npc.GetComponent<NPC>().Rest_Place].position);
-            }
-=======
                 //Check if is in WorkRime
                 if ((TimeManager.Instance.currentHour >= npc.WorkTime_Hour && TimeManager.Instance.currentMin >= npc.WorkTime_Min)
                     && (TimeManager.Instance.currentHour <= npc.RestTime_Hour && TimeManager.Instance.currentMin < npc.RestTime_Min))
@@ -85,7 +78,7 @@ public class NPCManager : MonoBehaviour
                     npc.MoveToDestination(restPlaces[npc.Rest_Place].position);
                     continue;
                 }
-            }
+            }            
         }
     }
 
@@ -96,7 +89,7 @@ public class NPCManager : MonoBehaviour
             NPC npc = npcObject.GetComponent<NPC>();
 
             //Rest first
-            if (npc.WorkTime_Hour >= npc.RestTime_Hour && npc.WorkTime_Min > npc.RestTime_Min)
+            if (npc.WorkTime_Hour > npc.RestTime_Hour || (npc.WorkTime_Hour == npc.RestTime_Hour && npc.WorkTime_Min >= npc.RestTime_Min))
             {
                 //Check if is in RestRime
                 if ((TimeManager.Instance.currentHour >= npc.RestTime_Hour && TimeManager.Instance.currentMin >= npc.RestTime_Min)
@@ -115,7 +108,7 @@ public class NPCManager : MonoBehaviour
             }
 
             //Work first
-            if (npc.RestTime_Hour >= npc.WorkTime_Hour && npc.RestTime_Min > npc.WorkTime_Min)
+            if (npc.WorkTime_Hour < npc.RestTime_Hour || (npc.WorkTime_Hour == npc.RestTime_Hour && npc.WorkTime_Min <= npc.RestTime_Min))
             {
                 //Check if is in WorkRime
                 if ((TimeManager.Instance.currentHour >= npc.WorkTime_Hour && TimeManager.Instance.currentMin >= npc.WorkTime_Min)
@@ -132,7 +125,6 @@ public class NPCManager : MonoBehaviour
                     continue;
                 }
             }
->>>>>>> Stashed changes
         }
     }
 
@@ -220,28 +212,8 @@ public class NPCManager : MonoBehaviour
 
         Debug.Log("Complete leaving.");
     }
-
-<<<<<<< Updated upstream
-
-
-
-    //test functions
-    public void WorkTime()
-    {
-        npcs[0].GetComponent<NPC>().MoveToDestination(workPlaces[0].position);
-        npcs[1].GetComponent<NPC>().MoveToDestination(workPlaces[1].position);
-    }
-
-    public void RestTime()
-    {
-        npcs[0].GetComponent<NPC>().MoveToDestination(restPlaces[0].position);
-        npcs[1].GetComponent<NPC>().MoveToDestination(restPlaces[1].position);
-    }
-
-=======
     private void OnApplicationQuit()
     {
         Leave();
     }
->>>>>>> Stashed changes
 }

@@ -8,12 +8,6 @@ public class DialogueTextsManager : MonoBehaviour
     void Start()
     {
         var loadedObject = Resources.Load(path);
-        Object texts = Instantiate(loadedObject, Vector3.zero, Quaternion.identity);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Instantiate(loadedObject, Vector3.zero, Quaternion.identity);
     }
 }
