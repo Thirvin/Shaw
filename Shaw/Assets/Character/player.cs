@@ -93,20 +93,19 @@ public class Player : Character
     }
     void Get_Diologue(NPC npc)
     {
-        string file_name = "Assets/Resources/";
+        string allFile_name = "Assets/Resources/";
+        allFile_name += npc.name + "/" + SceneManager.GetActiveScene().name + "/";
+        allFile_name += level % 5 == 0 ? level / 5 -1 : level / 5 + "/";
+        allFile_name += npc.Favorbility % 10 == 0 ? npc.Favorbility / 10 -1 : npc.Favorbility / 10 + "/";
+        string file_name = "";
         file_name += npc.name + "/" + SceneManager.GetActiveScene().name + "/";
-        file_name += level % 5 == 0 ? level / 5 -1 : level / 5 + "/";
-        file_name += npc.Favorbility % 10 == 0 ? npc.Favorbility / 10 -1 : npc.Favorbility / 10 + "/";
-        DirectoryInfo di = new DirectoryInfo(file_name);
+        file_name += level % 5 == 0 ? level / 5 - 1 : level / 5 + "/";
+        file_name += npc.Favorbility % 10 == 0 ? npc.Favorbility / 10 - 1 : npc.Favorbility / 10 + "/";
+        DirectoryInfo di = new DirectoryInfo(allFile_name);
         FileInfo[] files = di.GetFiles("*.prefab");
         int fileCount = files.Length; //取得個數
         System.Random crandom = new System.Random();
-        file_name += crandom.Next(fileCount-1) + ".prefab";
-        /*
-        var myLoadedAssetBundle = AssetBundle.LoadFromFile(file_name);
-        var prefab = myLoadedAssetBundle.LoadAsset<GameObject>("MyObject");
-        Instantiate(prefab);
-        */
+        file_name += crandom.Next(fileCount-1);
         Debug.Log(file_name);
         Instantiate(Resources.Load(file_name));        
     }
