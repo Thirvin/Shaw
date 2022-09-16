@@ -4,12 +4,14 @@ using UnityEngine;
 using System.IO;
 using System;
 using UnityEngine.AI;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 public class Player : Character
 {
-    public int talent = 0, ex_career = 0, ex_habit = 0;
+    public int talent = 0, ex_career = 0, ex_habit = 0,level = 0;
 
-    
+
+
     NavMeshAgent agent;
 
     [SerializeField] private LayerMask groundMask;
@@ -88,5 +90,22 @@ public class Player : Character
     private void OnDrawGizmos()
     {
         Gizmos.DrawRay(transform.position, transform.forward * 2);
+    }
+    void Get_Diologue(NPC npc)
+    {
+        string file_name = "";
+        file_name += npc.name + SceneManager.GetActiveScene().name;
+        file_name += this.level%5==0 ? level / 5 -1 : level / 5;
+        file_name += npc.Favorbility%10 == 0 ? npc.Favorbility/ 10 -1 : npc.Favorbility/ 10;
+        DirectoryInfo di = new DirectoryInfo(file_name);
+        FileInfo[] files = di.GetFiles("*.prefab");
+        int fileCount = files.Length; //取得個數
+        System.Random crandom=new System.Random();
+        file_name +=crandom.Next(fileCount-1);
+        var myLoadedAssetBundle = AssetBundle.LoadFromFile(file_name);
+        var prefab = myLoadedAssetBundle.LoadAsset<GameObject>("MyObject");
+        Instantiate(prefab);
+
+
     }
 }
