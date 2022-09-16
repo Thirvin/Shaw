@@ -8,6 +8,6 @@ public class DialogueTextsManager : MonoBehaviour
     void Start()
     {
         var loadedObject = Resources.Load(path);
-        Instantiate(loadedObject, Vector3.zero, Quaternion.identity);
+        //Instantiate(loadedObject, Vector3.zero, Quaternion.identity);
     }
 }

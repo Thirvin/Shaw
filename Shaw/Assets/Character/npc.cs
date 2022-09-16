@@ -28,7 +28,7 @@ public class NPC : Character
     }
     public void Trade(Player player)
     {
-          //do things here
+        //do things here
     }
     public void Talk(Player player)
     {
