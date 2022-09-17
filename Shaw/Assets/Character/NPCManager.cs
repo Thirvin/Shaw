@@ -138,16 +138,28 @@ public class NPCManager : MonoBehaviour
         while(line != "@")
         {
             //read data -> summon npc
-            int[] data = new int [7] ;
+            int[] data = new int [8] ;
             string[] subs = line.Split('-');
 
             GameObject npcTemp = Instantiate(characterPrefab);
-            NPC npc = npcTemp.AddComponent<NPC>();
+            //NPC npc = npcTemp.AddComponent<NPC>();
+            NPC npc;
 
-            for(int i = 0;i < 7;i ++)
+            for (int i = 0;i < 8;i ++)
             {
                 data[i] = Int32.Parse(subs[i]);
                 Console.WriteLine(data[i]);
+            }
+            
+            if (data[7] == 1)
+            {
+                //Destroy(npc);                
+                npcTemp.AddComponent(Type.GetType(subs[8]));
+                npc = npcTemp.GetComponent<NPC>();
+            }
+            else
+            {
+                npc = npcTemp.AddComponent<NPC>();
             }
 
             //write data
@@ -159,18 +171,21 @@ public class NPCManager : MonoBehaviour
             npc.Career = data[5];
             npc.Personality = data[6];
             npc.Number = npcs.Count;
-            npc.Name = subs[7];
-            string[] worktime = subs[8].Split(".");
-            string[] resttime = subs[9].Split(".");
+            npc.Name = subs[8];
+            string[] worktime = subs[9].Split(".");
+            string[] resttime = subs[10].Split(".");
 
             npc.WorkTime_Hour = Int32.Parse(worktime[0]);
             npc.WorkTime_Min = Int32.Parse(worktime[1]);
             npc.RestTime_Hour = Int32.Parse(resttime[0]);
             npc.RestTime_Min = Int32.Parse(resttime[1]);
 
-            npc.Work_Place = Int32.Parse(subs[10]);
-            npc.Rest_Place = Int32.Parse(subs[11]);
-            npcTemp.name = subs[7];
+            npc.Work_Place = Int32.Parse(subs[11]);
+            npc.Rest_Place = Int32.Parse(subs[12]);
+
+            npc.HasCustomizedScripts = data[7];
+
+            npcTemp.name = subs[8];
             npcTemp.layer = 6;
             //skin
             npcs.Add(npcTemp);
@@ -198,11 +213,12 @@ public class NPCManager : MonoBehaviour
             npcTemp += (npc.Money.ToString() + "-" );
             npcTemp += (npc.Favorbility.ToString() + "-" );
             npcTemp += (npc.Career.ToString() + "-" );
-            npcTemp += (npc.Personality.ToString()+"-");
+            npcTemp += (npc.Personality.ToString() + "-");
+            npcTemp += (npc.HasCustomizedScripts.ToString() + "-");
             npcTemp += (npc.Name+"-");
-            npcTemp += (npc.WorkTime_Hour.ToString()+"."+npc.WorkTime_Min.ToString()+"-");
-            npcTemp += (npc.RestTime_Hour.ToString()+"."+npc.RestTime_Min.ToString()+"-");
-            npcTemp += (npc.Work_Place.ToString()+"-"+npc.Rest_Place.ToString());
+            npcTemp += (npc.WorkTime_Hour.ToString()+ "."+npc.WorkTime_Min.ToString()+ "-");
+            npcTemp += (npc.RestTime_Hour.ToString()+ "."+npc.RestTime_Min.ToString()+ "-");
+            npcTemp += (npc.Work_Place.ToString()+ "-"+npc.Rest_Place.ToString());
             sw.WriteLine(npcTemp);
             Destroy(npcs[i]);
         }

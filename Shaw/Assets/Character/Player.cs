@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class Player : Character
 {
-    public int talent = 0, ex_career = 0, ex_habit = 0,level = 0;
+    public int talent = 0, ex_career = 0, ex_habit = 0,level = 1;
 
 
 
@@ -40,7 +40,6 @@ public class Player : Character
         if (hit)
         {
             hitInfo.transform.GetComponent<NPC>().Talk(this);
-            Get_Diologue(hitInfo.transform.GetComponent<NPC>());
         }
     }
 
@@ -81,7 +80,7 @@ public class Player : Character
     private void FixedUpdate()
     {
         Vector3 inputMovement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-        Vector3 movement = inputMovement.normalized * 0.2f;
+        Vector3 movement = inputMovement.normalized * Speed;
 
         agent.Move(movement);
     }
@@ -91,22 +90,5 @@ public class Player : Character
     {
         Gizmos.DrawRay(transform.position, transform.forward * 2);
     }
-    void Get_Diologue(NPC npc)
-    {
-        string allFile_name = "Assets/Resources/";
-        allFile_name += npc.name + "/" + SceneManager.GetActiveScene().name + "/";
-        allFile_name += level % 5 == 0 ? level / 5 -1 : level / 5 + "/";
-        allFile_name += npc.Favorbility % 10 == 0 ? npc.Favorbility / 10 -1 : npc.Favorbility / 10 + "/";
-        string file_name = "";
-        file_name += npc.name + "/" + SceneManager.GetActiveScene().name + "/";
-        file_name += level % 5 == 0 ? level / 5 - 1 : level / 5 + "/";
-        file_name += npc.Favorbility % 10 == 0 ? npc.Favorbility / 10 - 1 : npc.Favorbility / 10 + "/";
-        DirectoryInfo di = new DirectoryInfo(allFile_name);
-        FileInfo[] files = di.GetFiles("*.prefab");
-        int fileCount = files.Length; //取得個數
-        System.Random crandom = new System.Random();
-        file_name += crandom.Next(fileCount-1);
-        Debug.Log(file_name);
-        Instantiate(Resources.Load(file_name));        
-    }
+
 }
