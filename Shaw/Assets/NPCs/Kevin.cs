@@ -12,14 +12,14 @@ public class Kevin : NPC
     }
 
     //Remove or move base if you need
-    public override void CustomSituationCheck(string file)
+    public override void CustomSituationCheck()
     {
         if (WorldSituationManager.Instance.rainyDay)
         {
             file_name += "RannyDay/";
             return;
         }
-        
-        base.CustomSituationCheck(file);
+
+        base.CustomSituationCheck();
     }
 }
