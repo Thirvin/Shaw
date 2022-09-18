@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4203258880058392141
+--- !u!1 &483999708274450239
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1475169980102935827}
-  - component: {fileID: 7700886942407495775}
+  - component: {fileID: 882995835551406978}
+  - component: {fileID: 442683121682084008}
   m_Layer: 0
   m_Name: 0
   m_TagString: Untagged
@@ -17,48 +17,48 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1475169980102935827
+--- !u!4 &882995835551406978
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4203258880058392141}
+  m_GameObject: {fileID: 483999708274450239}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7934032504507865970}
+  - {fileID: 4247017504840791725}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7700886942407495775
+--- !u!114 &442683121682084008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4203258880058392141}
+  m_GameObject: {fileID: 483999708274450239}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83189876d4d389f43b7dd2e925aa112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 6
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":260.8,"yPos":149.999985},"ID":0,"ParamActions":[],"TMPFontGUID":"","Text":"JJJJJ\n","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":"","AutoAdvanceShouldDisplayOption":false,"IconGUID":"2c2a5be59b4a36648a911535c6e46ab8","Name":"Jason","OptionUIDs":[],"SpeechUID":1,"TimeUntilAdvance":1,"Volume":0}]}'
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":214.799988,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":"","Text":"Chating","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":"","AutoAdvanceShouldDisplayOption":false,"IconGUID":"2c2a5be59b4a36648a911535c6e46ab8","Name":"Json","OptionUIDs":[],"SpeechUID":1,"TimeUntilAdvance":1,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
   DefaultFont: {fileID: 11400000, guid: a84dc063ff51c8f45b7032e6d9abdd50, type: 2}
   NodeSerializedDataList:
-  - {fileID: 4519187914871749223}
+  - {fileID: 1492571580501520592}
   ContinueFont: {fileID: 11400000, guid: a84dc063ff51c8f45b7032e6d9abdd50, type: 2}
   EndConversationFont: {fileID: 11400000, guid: a84dc063ff51c8f45b7032e6d9abdd50, type: 2}
   Event:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &6040666097102366011
+--- !u!1 &2589214734099717665
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66,8 +66,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7934032504507865970}
-  - component: {fileID: 4519187914871749223}
+  - component: {fileID: 4247017504840791725}
+  - component: {fileID: 1492571580501520592}
   m_Layer: 0
   m_Name: ConversationEventInfo
   m_TagString: Untagged
@@ -75,28 +75,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7934032504507865970
+--- !u!4 &4247017504840791725
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6040666097102366011}
+  m_GameObject: {fileID: 2589214734099717665}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -337.12225, y: -152.7536, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1475169980102935827}
+  m_Father: {fileID: 882995835551406978}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4519187914871749223
+--- !u!114 &1492571580501520592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6040666097102366011}
+  m_GameObject: {fileID: 2589214734099717665}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
