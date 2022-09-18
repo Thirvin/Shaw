@@ -69,7 +69,7 @@ public class NPC : Character
     }
 
     //Override this to customize;
-    public virtual void CustomSituationCheck(
+    public virtual void CustomSituationCheck()
     {
         if (hasMission)
         {
