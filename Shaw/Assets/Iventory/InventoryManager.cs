@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     public void switch_weapon (string weapon)
     {
         //playerinventory.weapon = weapon;
-        string ID = "Scrip_"  + weapon;
+        string ID = "Script_"  + weapon;
         gameObject.AddComponent(Type.GetType(ID));
         gameObject.GetComponent<Player>().Weapon_Id = ID;
 
