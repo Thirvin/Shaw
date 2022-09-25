@@ -9,9 +9,9 @@ using UnityEngine.Networking;
 public class Player : Character
 {
     public int talent = 0, ex_career = 0, ex_habit = 0,level = 1;
-
-
-
+    public int MAG,DEF,INT,STR,DEX,LUK,ATK;
+    public bool has_weapon = true;
+    public string Weapon_Id = "Script_10001";
     NavMeshAgent agent;
 
     [SerializeField] private LayerMask groundMask;
@@ -23,6 +23,7 @@ public class Player : Character
     {
         agent = GetComponent<NavMeshAgent>();
         mainCamera = Camera.main;
+        gameObject.GetComponent<InventoryManager>().switch_weapon("10001");
     }
 
     private void Update()
@@ -30,8 +31,17 @@ public class Player : Character
         Aim();
 
         if (Input.GetKeyDown(KeyCode.F)) CastInteractionRay();
+
+        if(Input.GetKeyDown(KeyCode.L) && has_weapon) Attack();
     }
 
+    private void Attack()
+    {
+
+        Item shoot = GetComponent(Type.GetType(Weapon_Id)) as Item;
+        shoot.Shoot();
+
+    }
 
     void CastInteractionRay()
     {

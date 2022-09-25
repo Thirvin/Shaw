@@ -3097,6 +3097,15 @@ MonoBehaviour:
   ex_career: 0
   ex_habit: 0
   level: 1
+  MAG: 0
+  DEF: 0
+  INT: 0
+  STR: 0
+  DEX: 0
+  LUK: 0
+  ATK: 0
+  has_weapon: 1
+  Weapon_Id: Script_10001
   groundMask:
     serializedVersion: 2
     m_Bits: 2147483647
