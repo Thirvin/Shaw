@@ -23,7 +23,7 @@ public class Player : Character
     {
         agent = GetComponent<NavMeshAgent>();
         mainCamera = Camera.main;
-        gameObject.GetComponent<InventoryManager>().switch_weapon("10001");
+
     }
 
     private void Update()
