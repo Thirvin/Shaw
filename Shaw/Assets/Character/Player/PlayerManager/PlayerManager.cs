@@ -4,6 +4,23 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    Player player = new Player();
+    public static PlayerManager Instance;
+
+    public Player player;
+
+    public string playerName = "FatGuy";
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
 }

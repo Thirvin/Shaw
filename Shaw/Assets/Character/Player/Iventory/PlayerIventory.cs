@@ -1,39 +1,80 @@
+using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using Unity.VisualScripting;
 
 public class PlayerIventory : MonoBehaviour
 {
-    public int max_weight,now_weight;
-    public Item[] equiments = new Item[6];
-    public Item weapon;
-    public List<Item> bag = new List<Item>();
-    public Item[] props = new Item[5];
+    Player player;
 
-    public void pickup(Item item)
+    public GameObject testingItemGameObject;
+    private void Start()
     {
-        if(item.weight + now_weight <= max_weight)
+        player = GetComponent<Player>();
+        player.changeInventoryState += ChangeInventoryState;
+        InventoryManager.Instance.playerIventory = this;
+    }
+    private void Update()
+    {
+        //For testing
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            bag.Add(item);
-            now_weight += item.weight;
+            Pickup(testingItemGameObject, testingItemGameObject.GetComponent<Item>());
+        }
+    }
+    public void Pickup(GameObject itemGameObject, Item item)
+    {
+        if(item.weight + InventoryManager.Instance.now_weight <= InventoryManager.Instance.max_weight)
+        {
+            //Cuz the itemGameObject will be deleted, so we can't directly restore "item"
+            //We need another way to restore, example: Add the "item" into itemUI
+            InventoryManager.Instance.now_weight += item.weight;
+
+            GameObject itemUI = Instantiate(InventoryManager.Instance.itemUIPrefab, InventoryManager.Instance.bagContentUI.transform);            
+            Item UIItem = itemUI.AddComponent(item.GetType()) as Item;
+            //Need add some functions to set up ItemUI
+            InventoryManager.Instance.bag.Add(UIItem);
+
+            Destroy(itemGameObject);
         }
         else
         {
             //show player that bag is full
         }
     }
-    public void equip_armor(Item armor)
+
+    public void DropDown(Item item)
+    {
+        InventoryManager.Instance.now_weight -= item.weight;
+        InventoryManager.Instance.bag.Remove(item);
+
+        Destroy(item.gameObject);
+        //Need Add a function to spawn dropped item on the floor
+    }
+    public void Equip_armor(Item armor)
     {
         //check if able to equip
 
         //equip the armor
 
-        equiments[armor.wearable] = armor;
+        InventoryManager.Instance.equiments[armor.wearable] = armor;
     }
-    public void switch_weapon(Item weapon)
+    public void Switch_weapon(Item weapon)
     {
         //check if able to equip
 
         //change weapon id
+    }
+    public void PutInProps(Item prop)
+    {
+        
+    }
+
+    public void ChangeInventoryState()
+    {
+        InventoryManager.Instance.bagUI.SetActive(!InventoryManager.Instance.bagUI.activeSelf);
+        InventoryManager.Instance.equipmentsUI.SetActive(!InventoryManager.Instance.equipmentsUI.activeSelf);
     }
 }

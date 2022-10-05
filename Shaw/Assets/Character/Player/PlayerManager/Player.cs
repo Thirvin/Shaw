@@ -19,41 +19,27 @@ public class Player : Character
 
     public LayerMask npcLayer;
 
+
+    public delegate void Attack();
+    public Attack attack;
+
+    public delegate void ChangeInventoryState();
+    public ChangeInventoryState changeInventoryState;
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         mainCamera = Camera.main;
-
+        PlayerManager.Instance.player = this;
     }
 
     private void Update()
     {
-        Aim();
+        Aim();       
+    }   
 
-        if (Input.GetKeyDown(KeyCode.F)) CastInteractionRay();
-
-        if(Input.GetKeyDown(KeyCode.L) && has_weapon) Attack();
-    }
-
-    private void Attack()
-    {
-
-        Item shoot = GetComponent(Type.GetType(Weapon_Id)) as Item;
-        shoot.Shoot();
-
-    }
-
-    void CastInteractionRay()
-    {
-        RaycastHit hitInfo = new RaycastHit();
-        bool hit = Physics.Raycast(transform.position, transform.forward, out hitInfo, 2f, npcLayer);
-        if (hit)
-        {
-            hitInfo.transform.GetComponent<NPC>().Talk(this);
-        }
-    }
-
-
+    //Might need a controller version
+    //example, turn vector into angle as direction
     private void Aim()
     {
         var (success, position) = GetMousePosition();
@@ -86,15 +72,23 @@ public class Player : Character
             return (success: false, position: Vector3.zero);
         }
     }
-
-    private void FixedUpdate()
+    public void CastInteractionRay()
     {
-        Vector3 inputMovement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        RaycastHit hitInfo = new RaycastHit();
+        bool hit = Physics.Raycast(transform.position, transform.forward, out hitInfo, 2f, npcLayer);
+        if (hit)
+        {
+            hitInfo.transform.GetComponent<NPC>().Talk(this);
+        }
+    }
+
+    public void Move(Vector2 input)
+    {
+        Vector3 inputMovement = new Vector3(input.x, 0, input.y);
         Vector3 movement = inputMovement.normalized * Speed;
 
         agent.Move(movement);
     }
-
 
     private void OnDrawGizmos()
     {
