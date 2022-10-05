@@ -67,6 +67,7 @@
     <Compile Include="Assets\Character\Player\PlayerManager\PlayerManager.cs" />
     <Compile Include="Assets\UI\Inventory\InventoryManager.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\UI\ConversationManager.cs" />
+    <Compile Include="Assets\UI\Inventory\RightClick\InventoryRightClick.cs" />
     <Compile Include="Assets\UI\Inventory\UIItem.cs" />
     <Compile Include="Assets\System\World\WorldSituationManager.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\UI\UIConversationButton.cs" />
@@ -96,7 +97,6 @@
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\NodeEventHolder.cs" />
     <Compile Include="Assets\System\DialogueScripts\AudioSourceGroup.cs" />
     <Compile Include="Assets\Character\NPCManager.cs" />
-    <Compile Include="Assets\UI\Inventory\RightClick\InventoryRightClick.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
