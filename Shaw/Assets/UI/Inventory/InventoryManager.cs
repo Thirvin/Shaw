@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -15,20 +16,32 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject bagContentUI;
 
-    public GameObject currentRightClickMenu;
+    public List<GameObject> equipmentBoxes;
+    public List<GameObject> equipmentImages;
+    public List<GameObject> propBoxes;
+    public List<GameObject> propImages;
+
+    public GameObject currentRightClickMenu;    
 
     [HeaderAttribute("UI prefab")]
     public GameObject itemUIPrefab;
 
     public GameObject rightClickMenuPrefab;
+    public GameObject toolTipPrefab;
     public GameObject eqipButtonPrefab;
+    public GameObject unequipmentButtonPrefab;
     public GameObject putInPropsButtonPrefab;
+    public GameObject takeOutPropsButtonPrefab;
     public GameObject dropButtonPrefab;
+    public GameObject equipmentBoxImagePrefab;
 
     [HeaderAttribute("Scripts")]
     public PlayerIventory playerIventory;
-    public UIItem uIItem;
+    public UIItem selectedUIItem;
     public Item item;
+
+    public List<UIItem> equipmentUIItems;
+    public List<UIItem> propUIItems;
 
     [HeaderAttribute("Player stats")]
     public int max_weight, now_weight;

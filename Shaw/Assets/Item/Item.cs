@@ -6,6 +6,7 @@ public class Item : MonoBehaviour
 {
     public string itemName;
     public string itemInfo;
+    public string itemSpritePath;
     public int usable;
     public int wearable;
     public int weight,number,type;

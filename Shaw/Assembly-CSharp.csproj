@@ -85,10 +85,12 @@
     <Compile Include="Assets\NPCs\Kevin.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableConnection.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\SetParamAction.cs" />
+    <Compile Include="Assets\UI\Inventory\InventoryLeftClick.cs" />
     <Compile Include="Assets\System\DialogueScripts\DialogueTyperManager.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableParameter.cs" />
     <Compile Include="Assets\Item\Script_10001.cs" />
     <Compile Include="Assets\System\TimeManager.cs" />
+    <Compile Include="Assets\Item\Script_00001.cs" />
     <Compile Include="Assets\Character\Player\Input\PlayerInput.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\Connection.cs" />
     <Compile Include="Assets\Character\NPC.cs" />
@@ -97,6 +99,7 @@
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\NodeEventHolder.cs" />
     <Compile Include="Assets\System\DialogueScripts\AudioSourceGroup.cs" />
     <Compile Include="Assets\Character\NPCManager.cs" />
+    <Compile Include="Assets\UI\Inventory\ToolTip\InventoryToolTip.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
