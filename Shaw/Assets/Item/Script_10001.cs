@@ -6,8 +6,8 @@ public class Script_10001: Item
 {
     private void Awake()
     {
-        itemName = "—õ™J“I•€“ª";
-        itemInfo = "”‡¥ŒÂ—aİ•¨•i";
+        itemName = "ï¿½ï¿½ï¿½Jï¿½Iï¿½ï¿½ï¿½ï¿½";
+        itemInfo = "ï¿½ï¿½ï¿½ï¿½ï¿½Â—aï¿½İ•ï¿½ï¿½i";
         wearable = 1;
     }
     public override void Shoot()

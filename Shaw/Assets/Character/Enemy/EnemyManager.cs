@@ -5,12 +5,16 @@ using System;
 public class EnemyManager : MonoBehaviour
 {
     List<GameObject> enemys = new List<GameObject>();
+
     public void spawn(string id ,Vector3 pos)
     {
         GameObject temp = new GameObject();
         temp.AddComponent(Type.GetType(id));
         temp.transform.position = pos;
+        temp.GetComponent<Type.GetType(id)>.index = enemys.Count();
         enemys.Add(temp);
+
     }
+
 
 }
