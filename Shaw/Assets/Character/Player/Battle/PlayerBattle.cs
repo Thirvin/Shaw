@@ -16,8 +16,11 @@ public class PlayerBattle : MonoBehaviour
         Item shoot = GetComponent(Type.GetType(player.Weapon_Id)) as Item;
         shoot.Shoot();
     }
-    private void Hurt()
+    private void Hurt(int damage)
     {
         //do thing with playmanager
+        double def = player.B_DEF + player.E_DEF;
+        def = (def / (100 + def ))
+        player.hp -= (double)damage * def ;
     }
 }

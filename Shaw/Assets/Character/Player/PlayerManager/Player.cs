@@ -9,7 +9,9 @@ using UnityEngine.Networking;
 public class Player : Character
 {
     public int talent = 0, ex_career = 0, ex_habit = 0,level = 1;
-    public int MAG,DEF,INT,STR,DEX,LUK,ATK;
+    public int B_MAG,B_DEF,B_INT,B_STR,B_DEX,B_LUK,B_ATK;
+    public int E_MAG,E_DEF,E_INT,E_STR,E_DEX,E_LUK,E_ATK;
+    public int hp = 0;
     public bool has_weapon = true;
     public string Weapon_Id = "Script_10001";
     NavMeshAgent agent;
@@ -35,8 +37,8 @@ public class Player : Character
 
     private void Update()
     {
-        Aim();       
-    }   
+        Aim();
+    }
 
     //Might need a controller version
     //example, turn vector into angle as direction
