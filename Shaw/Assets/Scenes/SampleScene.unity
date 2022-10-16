@@ -3054,7 +3054,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1095107160}
-  - component: {fileID: 1095107157}
+  - component: {fileID: 1095107161}
   m_Layer: 0
   m_Name: NPCManager
   m_TagString: Untagged
@@ -3062,26 +3062,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1095107157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095107156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb68f61edfbb82048abd04d3b3987f09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterPrefab: {fileID: 6012144324016975101, guid: f7d9f4c5e362fe34697b38706c10a313, type: 3}
-  npcs: []
-  workPlaces:
-  - {fileID: 840392012}
-  - {fileID: 1808419451}
-  restPlaces:
-  - {fileID: 780623041}
-  - {fileID: 1928104467}
 --- !u!4 &1095107160
 Transform:
   m_ObjectHideFlags: 0
@@ -3097,6 +3077,26 @@ Transform:
   m_Father: {fileID: 425858898}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1095107161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095107156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae8d4ff845761964b9d8ad884f27f5f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 6012144324016975101, guid: f7d9f4c5e362fe34697b38706c10a313, type: 3}
+  npcs: []
+  workPlaces:
+  - {fileID: 840392012}
+  - {fileID: 1808419451}
+  restPlaces:
+  - {fileID: 780623041}
+  - {fileID: 1928104467}
 --- !u!1 &1125077985
 GameObject:
   m_ObjectHideFlags: 0
@@ -6625,13 +6625,21 @@ MonoBehaviour:
   ex_career: 0
   ex_habit: 0
   level: 1
-  MAG: 0
-  DEF: 0
-  INT: 0
-  STR: 0
-  DEX: 0
-  LUK: 0
-  ATK: 0
+  B_MAG: 0
+  B_DEF: 0
+  B_INT: 0
+  B_STR: 0
+  B_DEX: 0
+  B_LUK: 0
+  B_ATK: 0
+  E_MAG: 0
+  E_DEF: 0
+  E_INT: 0
+  E_STR: 0
+  E_DEX: 0
+  E_LUK: 0
+  E_ATK: 0
+  hp: 0
   has_weapon: 1
   Weapon_Id: Script_10001
   groundMask:

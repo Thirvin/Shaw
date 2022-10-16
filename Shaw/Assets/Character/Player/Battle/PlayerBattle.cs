@@ -21,6 +21,6 @@ public class PlayerBattle : MonoBehaviour
         //do thing with playmanager
         double def = player.B_DEF + player.E_DEF;
         def = (def / (100 + def ));
-        player.hp -= (int)(damage * def) ;
+        player.Hp -= (int)(damage * def) ;
     }
 }

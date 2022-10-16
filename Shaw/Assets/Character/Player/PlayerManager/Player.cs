@@ -12,7 +12,6 @@ public class Player : Character
     public int B_MAG,B_DEF,B_INT,B_STR,B_DEX,B_LUK,B_ATK;
     public int E_MAG,E_DEF,E_INT,E_STR,E_DEX,E_LUK,E_ATK;
     public CharacerStatus power = new CharacerStatus(100);
-    public int hp = 0;
     public bool has_weapon = true;
     public string Weapon_Id = "Script_10001";
     NavMeshAgent agent;

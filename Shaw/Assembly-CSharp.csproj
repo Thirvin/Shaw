@@ -68,8 +68,11 @@
     <Compile Include="Assets\UI\Inventory\InventoryManager.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\UI\ConversationManager.cs" />
     <Compile Include="Assets\UI\Inventory\RightClick\InventoryRightClick.cs" />
+    <Compile Include="Assets\Character\Enemy\EnemyManager.cs" />
+    <Compile Include="Assets\UI\Inventory\ToolTip\InventoryToolTip.cs" />
     <Compile Include="Assets\UI\Inventory\UIItem.cs" />
     <Compile Include="Assets\System\World\WorldSituationManager.cs" />
+    <Compile Include="Assets\Modifier\CharacerStatus.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\UI\UIConversationButton.cs" />
     <Compile Include="Assets\System\DialogueScripts\DialogueUtility.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\NPCConversation.cs" />
@@ -82,6 +85,7 @@
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\Parameter.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableNode.cs" />
     <Compile Include="Assets\System\DialogueScripts\DialogueVertexAnimator.cs" />
+    <Compile Include="Assets\Modifier\Mod.cs" />
     <Compile Include="Assets\NPCs\Kevin.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableConnection.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\SetParamAction.cs" />
@@ -89,17 +93,17 @@
     <Compile Include="Assets\System\DialogueScripts\DialogueTyperManager.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableParameter.cs" />
     <Compile Include="Assets\Item\Script_10001.cs" />
+    <Compile Include="Assets\Character\NPC\NPCManager.cs" />
     <Compile Include="Assets\System\TimeManager.cs" />
     <Compile Include="Assets\Item\Script_00001.cs" />
     <Compile Include="Assets\Character\Player\Input\PlayerInput.cs" />
+    <Compile Include="Assets\Character\Enemy\Enemy.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\Connection.cs" />
-    <Compile Include="Assets\Character\NPC.cs" />
     <Compile Include="Assets\Character\Player\Iventory\PlayerIventory.cs" />
     <Compile Include="Assets\DialogueEditor\Example\ExampleInputManager.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\NodeEventHolder.cs" />
     <Compile Include="Assets\System\DialogueScripts\AudioSourceGroup.cs" />
-    <Compile Include="Assets\Character\NPCManager.cs" />
-    <Compile Include="Assets\UI\Inventory\ToolTip\InventoryToolTip.cs" />
+    <Compile Include="Assets\Character\NPC\NPC.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
