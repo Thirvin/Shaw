@@ -7,8 +7,8 @@ public class Script_00001 : Item
     private void Awake()
     {
         usable = 1;
-        itemName = "”’ŠJ…";
-        itemInfo = "‘½Š…";
+        itemName = "ç™½é–‹æ°´";
+        itemInfo = "å¤šå–";
         itemSpritePath = "Sprites/GUI_Parts/Icons/skill_icon_01";
     }
 }
