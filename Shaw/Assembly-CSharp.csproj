@@ -104,6 +104,13 @@
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\NodeEventHolder.cs" />
     <Compile Include="Assets\System\DialogueScripts\AudioSourceGroup.cs" />
     <Compile Include="Assets\Character\NPC\NPC.cs" />
+    <Compile Include="Assets\Item\Script_60001.cs" />
+    <Compile Include="Assets\Resources\Weapons\Weapon.cs" />
+    <Compile Include="Assets\Resources\Weapons\ButterHands\Scripts\ButterHands.cs" />
+    <Compile Include="Assets\Resources\Weapons\ButterHands\Scripts\AirBullet.cs" />
+    <Compile Include="Assets\Resources\Weapons\Rocks\Scripts\Rocks.cs" />
+    <Compile Include="Assets\Resources\Weapons\Rocks\Scripts\RockBullet.cs" />
+    <Compile Include="Assets\Resources\Weapons\Bullet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

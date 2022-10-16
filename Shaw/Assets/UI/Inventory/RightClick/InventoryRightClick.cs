@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class InventoryRightClick : MonoBehaviour
 {
     public void Equip()
     {
-        if(InventoryManager.Instance.selectedUIItem.itemStatus.text == "E")
+        //check if able to equip
+        if (InventoryManager.Instance.CheckEquipQualification(InventoryManager.Instance.item))
+            return;
+
+        if (InventoryManager.Instance.selectedUIItem.itemStatus.text == "E")
         {
             Unequip();
         }
@@ -67,11 +70,17 @@ public class InventoryRightClick : MonoBehaviour
 
     public void Unequip()
     {
+        InventoryManager.Instance.ItemRemoveMod(InventoryManager.Instance.item);
+        
+
         Destroy(InventoryManager.Instance.equipmentImages[InventoryManager.Instance.item.wearable - 1]);        
         InventoryManager.Instance.equipmentUIItems[InventoryManager.Instance.item.wearable - 1].itemStatus.text = "";
         Destroy(InventoryManager.Instance.currentRightClickMenu);
 
-        //Need function to remove item stats on player
+        if(InventoryManager.Instance.item.wearable == 6)
+        {
+            PlayerManager.Instance.SpawnDefaultWeapon();
+        }
     }
 
     public void Drop()

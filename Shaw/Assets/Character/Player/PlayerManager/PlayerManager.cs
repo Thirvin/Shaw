@@ -23,4 +23,9 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    public void SpawnDefaultWeapon()
+    {
+        Instantiate(player.defaultWeapon, player.transform);
+    }
+
 }

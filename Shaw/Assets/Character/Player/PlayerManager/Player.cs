@@ -8,14 +8,20 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 public class Player : Character
 {
+    [Header("Stats")]
     public int talent = 0, ex_career = 0, ex_habit = 0,level = 1;
-    public int B_MAG,B_DEF,B_INT,B_STR,B_DEX,B_LUK,B_ATK;
-    public int E_MAG,E_DEF,E_INT,E_STR,E_DEX,E_LUK,E_ATK;
-    public CharacerStatus power = new CharacerStatus(100);
-    public bool has_weapon = true;
-    public string Weapon_Id = "Script_10001";
+    public CharacerStatus MAG = new CharacerStatus(0);
+    public CharacerStatus DEF = new CharacerStatus(0);
+    public int INT = 0;
+    public int STR = 0;
+    public CharacerStatus DEX = new CharacerStatus(0);
+    public CharacerStatus LUK = new CharacerStatus(0);
+    public CharacerStatus ATK = new CharacerStatus(0);
+    public Weapon weapon;
+    public GameObject defaultWeapon;
     NavMeshAgent agent;
 
+    [Header("Settings")]
     [SerializeField] private LayerMask groundMask;
     Camera mainCamera;
 
@@ -27,20 +33,20 @@ public class Player : Character
 
     public delegate void ChangeInventoryState();
     public ChangeInventoryState changeInventoryState;
-
+    private void OnEnable()
+    {
+        PlayerManager.Instance.player = this;
+    }
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         mainCamera = Camera.main;
-        PlayerManager.Instance.player = this;
-        power.AddModifier(new Mod(0,0.5f));
+        PlayerManager.Instance.SpawnDefaultWeapon();
     }
 
     private void Update()
     {
-        Debug.Log(power.F_value);
         Aim();
-        power.RemoveModifier(new Mod(0,0.5f));
     }
 
     //Might need a controller version

@@ -13,14 +13,15 @@ public class PlayerBattle : MonoBehaviour
     }
     private void Attack()
     {
-        Item shoot = GetComponent(Type.GetType(player.Weapon_Id)) as Item;
-        shoot.Shoot();
+        //Item shoot = GetComponent(Type.GetType(player.Weapon_Id)) as Item;
+        //shoot.Shoot();
+        player.weapon.Shoot();
     }
     private void Hurt(int damage)
     {
         //do thing with playmanager
-        double def = player.B_DEF + player.E_DEF;
+        double def = player.DEF.F_value;
         def = (def / (100 + def ));
-        player.Hp -= (int)(damage * def) ;
+        player.HP -= (int)(damage * def) ;
     }
 }

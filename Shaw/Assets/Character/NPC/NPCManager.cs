@@ -12,11 +12,6 @@ public class NPCManager : MonoBehaviour
     public List<Transform> workPlaces = new List<Transform>();
     public List<Transform> restPlaces = new List<Transform>();
 
-    private void Awake()
-    {
-
-    }
-
     private void Start()
     {
         TimeManager.Instance.npcManager = this;
@@ -26,6 +21,7 @@ public class NPCManager : MonoBehaviour
     void Update()
     {
         //for NPC data test, Keypad1 -> build, Keypad2 -> leave
+        /*
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
             GetComponent<NPCManager>().Build();
@@ -34,6 +30,7 @@ public class NPCManager : MonoBehaviour
         {
             GetComponent<NPCManager>().Leave();
         }
+        */
     }
 
     public void TimeCheck()
@@ -163,8 +160,8 @@ public class NPCManager : MonoBehaviour
             }
 
             //write data
-            npc.Hp = data[0];
-            npc.Mana = data[1];
+            npc.HP = data[0];
+            npc.MP = data[1];
             npc.Speed = data[2];
             npc.Money = data[3];
             npc.Favorbility = data[4];
@@ -207,8 +204,8 @@ public class NPCManager : MonoBehaviour
             NPC npc = npcs[i].GetComponent<NPC>();
 
             string npcTemp = "";
-            npcTemp += (npc.Hp.ToString() + "-" );
-            npcTemp += (npc.Mana.ToString() + "-" );
+            npcTemp += (npc.HP.ToString() + "-" );
+            npcTemp += (npc.MP.ToString() + "-" );
             npcTemp += (npc.Speed.ToString() + "-" );
             npcTemp += (npc.Money.ToString() + "-" );
             npcTemp += (npc.Favorbility.ToString() + "-" );

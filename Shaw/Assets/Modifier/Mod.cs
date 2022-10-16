@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Mod
 {
-    public float value,magnifiction;
-    public Mod (float a,float b)
+    public float value, magnifiction;
+    public Mod (float value, float magnifiction)
     {
-        value = a;
-        magnifiction = b;
+        this.value = value;
+        this.magnifiction = magnifiction;
     }
 }

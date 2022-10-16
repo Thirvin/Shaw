@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using Unity.VisualScripting;
-using UnityEditor.PackageManager;
 
 public class PlayerIventory : MonoBehaviour
 {
@@ -55,6 +53,8 @@ public class PlayerIventory : MonoBehaviour
                 ItemUI.itemName.text = UIItem.itemName;
             InventoryManager.Instance.bag.Add(UIItem);
 
+
+
             Destroy(itemGameObject);
         }
         else
@@ -73,18 +73,24 @@ public class PlayerIventory : MonoBehaviour
     }
     public void Equip_armor(Item armor)
     {
-        //check if able to equip
-
         //equip the armor
-
         InventoryManager.Instance.equiments[armor.wearable - 1] = armor;
+
+        InventoryManager.Instance.ItemAddMod(armor);
+        Debug.Log(PlayerManager.Instance.player.ATK.F_value);
     }
     public void Switch_weapon(Item weapon)
     {
-        //check if able to equip
-
         //change weapon id
         InventoryManager.Instance.equiments[weapon.wearable - 1] = weapon;
+
+        InventoryManager.Instance.ItemAddMod(weapon);
+
+        if(player.weapon != null)
+        {
+            Destroy(player.weapon.gameObject);
+        }
+        Instantiate(Resources.Load(weapon.weaponPrefabPath), player.transform);        
     }
 
     public void Unequip()
@@ -105,5 +111,6 @@ public class PlayerIventory : MonoBehaviour
     {
         InventoryManager.Instance.bagUI.SetActive(!InventoryManager.Instance.bagUI.activeSelf);
         InventoryManager.Instance.equipmentsUI.SetActive(!InventoryManager.Instance.equipmentsUI.activeSelf);
+        InventoryManager.Instance.backgroundUI.SetActive(!InventoryManager.Instance.backgroundUI.activeSelf);
     }
 }
