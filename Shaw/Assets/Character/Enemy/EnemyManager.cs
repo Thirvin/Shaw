@@ -9,9 +9,10 @@ public class EnemyManager : MonoBehaviour
     public void spawn(string id ,Vector3 pos)
     {
         GameObject temp = new GameObject();
-        temp.AddComponent(Type.GetType(id));
+        Enemy enemy = temp.AddComponent(Type.GetType(id)) as Enemy;
         temp.transform.position = pos;
-        temp.GetComponent<Type.GetType(id)>.index = enemys.Count();
+
+        enemy.index = enemys.Count;
         enemys.Add(temp);
 
     }
