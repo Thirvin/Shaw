@@ -22,7 +22,7 @@ public class EffectStats_Temporary : MonoBehaviour
             }
         }
 
-        modifier.AddModifier(new Mod(change,0))
+        modifier.AddModifier(new Mod(change,0));
 
         return 0;
     }

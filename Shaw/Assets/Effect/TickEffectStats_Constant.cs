@@ -9,7 +9,7 @@ public class TickEffectStats_Constant : MonoBehaviour
     public int tickEffectStats_Constant()
     {
         time -= 1;
-        modifier.AddModifier(new Mod(change,0))
+        modifier.AddModifier(new Mod(change,0));
 
 
         if(time == 0)
