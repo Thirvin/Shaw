@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EffectStats_Temporary : MonoBehaviour
+public class EffectStats_Temporary : Effect
 {
     public int change, time;
     bool used = false;
     CharacerStatus modifier;
-    public int effectStats_Temporary()
+    public int active()
     {
 
         if(!used)

@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TickEffectStats_Equivariance : MonoBehaviour
+public class TickEffectStats_Equivariance : Effect
 {
     int change, time;
     CharacerStatus modifier;
-    public int tickEffectStats_Constant()
+    public int active()
     {
         time -= 1;
-        EffectStats_Constant use_only_once = new EffectStats_Constant(change,modifier);
-        use_only_once.effectStats_Constant();
+        modifier.AddModifier(new Mod(change,0));
 
         change -= 1;
 
