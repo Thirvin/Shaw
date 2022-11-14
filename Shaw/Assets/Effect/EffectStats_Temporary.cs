@@ -7,7 +7,7 @@ public class EffectStats_Temporary : Effect
     public int change, time;
     bool used = false;
     CharacerStatus modifier;
-    public int active()
+    public override bool active()
     {
 
         if(!used)
@@ -18,12 +18,12 @@ public class EffectStats_Temporary : Effect
             if(time == 0)
             {
                 modifier.AddModifier(new Mod(-change,0));
-                return 1;
+                return true;
             }
         }
 
         modifier.AddModifier(new Mod(change,0));
 
-        return 0;
+        return false;
     }
 }

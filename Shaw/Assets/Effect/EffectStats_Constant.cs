@@ -6,12 +6,12 @@ public class EffectStats_Constant : Effect
 {
     public int change;
     public CharacerStatus modifier;
-    public int active()
+    public override bool active()
     {
         Mod mod = new Mod(change,0);
-        return 1;
+        return true;
     }
-    public EffectStats_Constant(int change,CharacerStatus modifier)
+    public EffectStats_Constant(int change, CharacerStatus modifier)
     {
         this.change = change;
         this.modifier = modifier;

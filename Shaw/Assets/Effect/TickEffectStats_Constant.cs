@@ -6,15 +6,15 @@ public class TickEffectStats_Constant : Effect
 {
     int change, time;
     CharacerStatus modifier;
-    public int active()
+    public override bool active()
     {
         time -= 1;
         modifier.AddModifier(new Mod(change,0));
 
 
         if(time == 0)
-            return 1;
+            return true;
         else
-            return 0;
+            return false;
     }
 }

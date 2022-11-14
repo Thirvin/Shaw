@@ -6,7 +6,7 @@ public class TickEffectStats_Equivariance : Effect
 {
     int change, time;
     CharacerStatus modifier;
-    public int active()
+    public override bool active()
     {
         time -= 1;
         modifier.AddModifier(new Mod(change,0));
@@ -14,8 +14,8 @@ public class TickEffectStats_Equivariance : Effect
         change -= 1;
 
         if(time == 0)
-            return 1;
+            return true;
         else
-            return 0;
+            return false;
     }
 }

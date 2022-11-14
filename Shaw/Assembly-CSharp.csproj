@@ -58,11 +58,17 @@
   <ItemGroup>
     <Compile Include="Assets\Item\ItemManager.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\ConversationNode.cs" />
+    <Compile Include="Assets\Resources\Weapons\Bullet.cs" />
     <Compile Include="Assets\System\DialogueScripts\MonobehaviourExtensions.cs" />
+    <Compile Include="Assets\Effect\EffectStats_Temporary.cs" />
+    <Compile Include="Assets\Resources\Weapons\Rocks\Scripts\Rocks.cs" />
+    <Compile Include="Assets\Effect\Effect.cs" />
     <Compile Include="Assets\Character\Player\Battle\PlayerBattle.cs" />
+    <Compile Include="Assets\Effect\EffectStats_Constant.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\Conversation.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableConversation.cs" />
     <Compile Include="Assets\Item\Item.cs" />
+    <Compile Include="Assets\Resources\Weapons\ButterHands\Scripts\ButterHands.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableSetParamAction.cs" />
     <Compile Include="Assets\Character\Player\PlayerManager\PlayerManager.cs" />
     <Compile Include="Assets\UI\Inventory\InventoryManager.cs" />
@@ -70,6 +76,7 @@
     <Compile Include="Assets\UI\Inventory\RightClick\InventoryRightClick.cs" />
     <Compile Include="Assets\Character\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\UI\Inventory\ToolTip\InventoryToolTip.cs" />
+    <Compile Include="Assets\Resources\Weapons\Rocks\Scripts\RockBullet.cs" />
     <Compile Include="Assets\UI\Inventory\UIItem.cs" />
     <Compile Include="Assets\System\World\WorldSituationManager.cs" />
     <Compile Include="Assets\Modifier\CharacerStatus.cs" />
@@ -84,17 +91,20 @@
     <Compile Include="Assets\UI\Inventory\InventoryCanvas.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\Parameter.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableNode.cs" />
+    <Compile Include="Assets\Resources\Weapons\ButterHands\Scripts\AirBullet.cs" />
     <Compile Include="Assets\System\DialogueScripts\DialogueVertexAnimator.cs" />
     <Compile Include="Assets\Modifier\Mod.cs" />
     <Compile Include="Assets\NPCs\Kevin.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableConnection.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\SetParamAction.cs" />
     <Compile Include="Assets\UI\Inventory\InventoryLeftClick.cs" />
+    <Compile Include="Assets\Effect\TickEffectStats_Constant.cs" />
     <Compile Include="Assets\System\DialogueScripts\DialogueTyperManager.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\EditableParameter.cs" />
     <Compile Include="Assets\Item\Script_10001.cs" />
     <Compile Include="Assets\Character\NPC\NPCManager.cs" />
     <Compile Include="Assets\System\TimeManager.cs" />
+    <Compile Include="Assets\Resources\Weapons\Weapon.cs" />
     <Compile Include="Assets\Item\Script_00001.cs" />
     <Compile Include="Assets\Character\Player\Input\PlayerInput.cs" />
     <Compile Include="Assets\Character\Enemy\Enemy.cs" />
@@ -102,15 +112,11 @@
     <Compile Include="Assets\Character\Player\Iventory\PlayerIventory.cs" />
     <Compile Include="Assets\DialogueEditor\Example\ExampleInputManager.cs" />
     <Compile Include="Assets\DialogueEditor\Assets\Scripts\NodeEventHolder.cs" />
+    <Compile Include="Assets\Effect\TickEffectStats_Equivariance.cs" />
     <Compile Include="Assets\System\DialogueScripts\AudioSourceGroup.cs" />
     <Compile Include="Assets\Character\NPC\NPC.cs" />
     <Compile Include="Assets\Item\Script_60001.cs" />
-    <Compile Include="Assets\Resources\Weapons\Weapon.cs" />
-    <Compile Include="Assets\Resources\Weapons\ButterHands\Scripts\ButterHands.cs" />
-    <Compile Include="Assets\Resources\Weapons\ButterHands\Scripts\AirBullet.cs" />
-    <Compile Include="Assets\Resources\Weapons\Rocks\Scripts\Rocks.cs" />
-    <Compile Include="Assets\Resources\Weapons\Rocks\Scripts\RockBullet.cs" />
-    <Compile Include="Assets\Resources\Weapons\Bullet.cs" />
+    <Compile Include="Assets\Effect\TestingEffectGiver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Effect : MonoBehaviour
+public class Effect
 {
-    public virtual int active()
+    public virtual bool active()
     {
-        return 0;
+        return false;
     }
 }
