@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
 
     public string playerName = "FatGuy";
 
-    public List<Effect> effects;
+    public List<Effect> effects = new List<Effect>();
 
     private void Awake()
     {
@@ -42,12 +42,13 @@ public class PlayerManager : MonoBehaviour
     {
         //Can't use a foreach because foreach can't be changed during its statement
         if (effects == null) yield break;
-        for (int i = 0; i < effects.Count; i++)
+        for (int i = effects.Count - 1; i >= 0; i--)
         {
             Debug.Log("Tick effect" + effects[i]);
             if (effects[i].active())
             {
                 effects.Remove(effects[i]);
+                Debug.Log(PlayerManager.Instance.player.ATK.F_value);
             }
         }
 

@@ -17,4 +17,11 @@ public class TickEffectStats_Constant : Effect
         else
             return false;
     }
+
+    public TickEffectStats_Constant(int change, int time,CharacerStatus modifier)
+    {
+        this.change = change;
+        this.time = time;
+        this.modifier = modifier;
+    }
 }

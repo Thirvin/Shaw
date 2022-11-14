@@ -7,6 +7,12 @@ public class EffectStats_Temporary : Effect
     public int change, time;
     bool used = false;
     CharacerStatus modifier;
+    public EffectStats_Temporary(int change,int time,CharacerStatus modifier)
+    {
+        this.change = change;
+        this.time = time;
+        this.modifier = modifier;
+    }
     public override bool active()
     {
 

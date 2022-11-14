@@ -9,6 +9,7 @@ public class EffectStats_Constant : Effect
     public override bool active()
     {
         Mod mod = new Mod(change,0);
+        modifier.AddModifier(mod);
         return true;
     }
     public EffectStats_Constant(int change, CharacerStatus modifier)

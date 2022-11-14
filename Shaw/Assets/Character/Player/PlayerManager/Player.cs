@@ -12,11 +12,11 @@ public class Player : Character
     public int talent = 0, ex_career = 0, ex_habit = 0,level = 1;
     public CharacerStatus MAG = new CharacerStatus(0);
     public CharacerStatus DEF = new CharacerStatus(0);
+    public CharacerStatus ATK = new CharacerStatus(0);
     public int INT = 0;
     public int STR = 0;
     public CharacerStatus DEX = new CharacerStatus(0);
     public CharacerStatus LUK = new CharacerStatus(0);
-    public CharacerStatus ATK = new CharacerStatus(0);
     public Weapon weapon;
     public GameObject defaultWeapon;
     NavMeshAgent agent;

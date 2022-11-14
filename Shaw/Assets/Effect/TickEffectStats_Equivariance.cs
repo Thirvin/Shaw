@@ -18,4 +18,10 @@ public class TickEffectStats_Equivariance : Effect
         else
             return false;
     }
+    public TickEffectStats_Equivariance(int change, int time,CharacerStatus modifier)
+    {
+        this.change = change;
+        this.time = time;
+        this.modifier = modifier;
+    }
 }
